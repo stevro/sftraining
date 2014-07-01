@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+        <title>{% block title %}Store application{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" media="screen" type="text/css" href="{{asset('bundles/sensiotodo/css/style.css')}}"/>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        
+        {% block body %}
+           
+            {%block stefan%}{%endblock stefan%}
+            
+        {% endblock body %}
+        
+       
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends "::base.html.twig"%}
+{% block body %}
+    Hello {{ name }}!
+    <br/>
+     
+    asdsdasd<br/>
+    <a href="{{ path('hello',{'name':name})}}">Hello asshole</a>
+   
+   {%block stefan%}
+        <p>Stefan block</p>
+    {%endblock stefan%}
+   
+{% endblock %}
+ 

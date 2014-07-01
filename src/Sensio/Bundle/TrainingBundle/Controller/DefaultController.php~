@@ -1,0 +1,32 @@
+<?php
+
+namespace Sensio\Bundle\TrainingBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+
+class DefaultController extends Controller
+{
+    /**
+     * @Route("/hello/{name}")
+     * @Template("SensioTrainingBundle:Default:index.html.twig")
+     */
+    public function indexAction(Request $request)
+    {
+        //return array('name' => $name);
+	$name = $request->attributes->get('name');
+	/*
+	*using Response object
+	*return new Response(sprintf('Hello %s!', $name));
+	*/
+
+	//using twig
+	//return $this->render('SensioTrainingBundle:Default:index.html.twig',array('name'=>$name));
+
+	//using twig+annotations @Template
+	return array('name'=>$name);
+    }
+}

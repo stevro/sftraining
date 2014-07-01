@@ -1,0 +1,15 @@
+sensio_store:
+    resource: "@SensioStoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+sensio_to_do:
+    resource: "@SensioToDoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+sensio_training:
+    resource: "@SensioTrainingBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

@@ -1,0 +1,9 @@
+{%extends "SensioToDoBundle::layout.html.twig"%}
+
+{%block content%}
+<p>
+    <strong>Id</strong>: {{task.id}}<br/>
+    <strong>Title</strong>: {{task.title}}<br/>
+    <strong>Status</strong>: {{task.is_done ? 'done':'not finished'}}<br/>
+</p>
+{%endblock%}

@@ -1,0 +1,40 @@
+{%extends "SensioToDoBundle::layout.html.twig"%}
+
+{%block content%}
+<form action="{{path('todo_create')}}" method="post">
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" size="45"/>
+        <input type="hidden" name="action" value="create"/>
+        <button type="submit">send</button>
+    </div>
+</form>
+<p>There are <strong>{{count}}</strong> tasks!</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {%for task in tasks%}
+            <tr>
+                <td class="center">{{task.id}}</td>
+                <td><a href="{{path('todo_show',{'id':task.id})}}">{{task.title}}</a></td>
+                <td class="center">
+                    {%if task.is_done%}
+                        <span class="done">done</span>
+                    {%else%}                        
+                        <a href="{{path('todo_close',{'id':task.id})}}">close</a>
+                    {%endif%}
+                </td>
+                <td class="center"><a href="{{path('todo_delete',{'id':task.id})}}">delete</a></td>
+            </tr>
+    {%endfor%}
+    </tbody>
+</table>
+{%endblock%}
